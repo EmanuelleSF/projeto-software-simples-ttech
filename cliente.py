@@ -43,3 +43,17 @@ class Cliente(ABC):
     def mostrar(self):
         pass
 
+
+# Classe concreta que se refere aos clientes acima de 18 anos de idade, segunda branch
+
+class clientemaior(Cliente):
+    def __init__(self, nome, nascimento, genero, rg, cpf, telefone, email, historico, medicamentos, condicoes, maioridade):
+        super().__init__(nome, nascimento, genero, rg, cpf, telefone, email, historico, medicamentos, condicoes)
+
+        self.__maioridade = maioridade
+        maioridade == True
+
+    def mostrar(self):
+        return f"Dados do cliente: Nome: {self.get_nome}, Data de nascimento: {self.get_nascimento}, Gênero: {self.get_genero}, RG: {self.get_rg},\
+           CPF: {self.get_cpf}, Telefone/Celular: {self.get_telefone}, Email: {self.get_email}, Histórico médico: {self.get_historico},\
+             Uso de medicamentos: {self.get_medicamentos}, Condições odontológicas: {self.get_condicoes}. "
