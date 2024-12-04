@@ -57,3 +57,44 @@ class clientemaior(Cliente):
         return f"Dados do cliente: Nome: {self.get_nome}, Data de nascimento: {self.get_nascimento}, Gênero: {self.get_genero}, RG: {self.get_rg},\
            CPF: {self.get_cpf}, Telefone/Celular: {self.get_telefone}, Email: {self.get_email}, Histórico médico: {self.get_historico},\
              Uso de medicamentos: {self.get_medicamentos}, Condições odontológicas: {self.get_condicoes}. "
+
+
+
+class clientemenor(Cliente):
+    def __init__(self, nome, nascimento, genero, rg, cpf, telefone, email, historico, medicamentos, condicoes, maioridade, \
+        nomeresponsavel, parentesco, rgresponsavel, cpfresponsavel, telefoneresponsavel, emailresponsavel):
+        super().__init__(nome, nascimento, genero, rg, cpf, telefone, email, historico, medicamentos, condicoes)
+
+        self.__maioridade = maioridade
+        maioridade == False
+        self.__nomeresponsavel = nomeresponsavel
+        self.__parentesco = parentesco
+        self.__rgresponsavel = rgresponsavel
+        self.__cpfresponsavel = cpfresponsavel
+        self.__telefoneresponsavel = telefoneresponsavel
+        self.__emailresponsavel = emailresponsavel
+
+    def get_nomeresponsavel(self):
+        return self.__nomeresponsavel
+    def get_parentesco(self):
+        return self.__parentesco
+    def get_rgresponsavel(self):
+        return self.__rgresponsavel
+    def get_cpfresponsavel(self):
+        return self.__cpfresponsavel
+    def get_telefoneresponsavel(self):
+        return self.__telefoneresponsavel
+    def get_emailresponsavel(self):
+        return self.__emailresponsavel
+
+
+    def mostrar(self):
+        return f"Dados do cliente: Nome: {self.get_nome}, Data de nascimento: {self.get_nascimento}, Gênero: {self.get_genero}, RG: {self.get_rg},\
+           CPF: {self.get_cpf}, Telefone/Celular: {self.get_telefone}, Email: {self.get_email}, Histórico médico: {self.get_historico},\
+             Uso de medicamentos: {self.get_medicamentos}, Condições odontológicas: {self.get_condicoes}. "
+
+    def mostrarresponsavel(self):
+        return f"Dados do responsável do(a) cliente {self.get_nome}: Nome: {self.get_nomeresponsavel}, Parentesco:{self.get_parentesco},\ 
+        RG: {self.get_rgresponsavel}, CPF: {self.get_cpfresponsavel}, Telefone/Celular: {self.get_telefoneresponsavel}, Email: {self.get_emailresponsavel}. "
+            
+            
